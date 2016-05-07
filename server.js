@@ -1,13 +1,17 @@
 #!/bin/env node
-//  OpenShift sample Node application
-var express = require('express');
-var fs      = require('fs');
+var express    = require('express');
+var fs         = require('fs');
+var bodyParser = require("body-parser");
 
+var HighScoreRouter     = require('./router/highscore');
+var HighScoreController = require('./controller/highscore');
+
+var Db = require('./model/db_factory');
 
 /**
  *  Define the sample application.
  */
-var SampleApp = function() {
+var CardMatchApp = function() {
 
     //  Scope.
     var self = this;
@@ -113,12 +117,17 @@ var SampleApp = function() {
      */
     self.initializeServer = function() {
         self.createRoutes();
-        self.app = express.createServer();
+        self.app = express();
+        self.app.use(bodyParser.json());
+        self.app.use(bodyParser.urlencoded({"extended" : false}));
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
+
+        // Rest API routing
+        self.app.use('/highscore', new HighScoreRouter(new HighScoreController(new Db())));
     };
 
 
@@ -146,14 +155,14 @@ var SampleApp = function() {
         });
     };
 
-};   /*  Sample Application.  */
+};
 
 
 
 /**
  *  main():  Main code.
  */
-var zapp = new SampleApp();
-zapp.initialize();
-zapp.start();
+var cardMatchApp = new CardMatchApp();
+cardMatchApp.initialize();
+cardMatchApp.start();
 
