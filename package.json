@@ -1,7 +1,7 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "cardmatch",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Card Match Rest API",
   "keywords": [
     "OpenShift",
     "Node.js",
@@ -9,11 +9,11 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Quentin Lin",
+    "email": "coder9t99@gmail.com",
+    "url": "https://au.linkedin.com/in/code-lin-0319914b"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://cardmatch-coder9t99.rhcloud.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/openshift/origin-server"
@@ -25,11 +25,12 @@
   },
 
   "dependencies": {
-    "express": "~3.4.4"
+    "express": "^4.13.3",
+    "body-parser": "^1.13.3",
+    "mongoose": "^4.4.15"
   },
   "devDependencies": {},
   "bundleDependencies": [],
-
   "private": true,
   "main": "server.js"
 }
