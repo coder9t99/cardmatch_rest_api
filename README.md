@@ -1,5 +1,5 @@
 
-Operation : Lock
+#### Operation : Lock
 
 creates a lock/batch number as client's token to submit highscore data
 
@@ -20,7 +20,7 @@ sample output:
 ```
 
 
-Operation : Locks
+#### Operation : Locks
 
 shows list of lock/batch numbers
 
@@ -48,7 +48,7 @@ sample output:
 ```
 
 
-Operation : List Scores
+#### Operation : List Scores
 
 shows all scores
 
@@ -91,7 +91,7 @@ sample output:
 ```
 
 
-Operation : Add Score
+#### Operation : Add Score
 
 add a single score
 
@@ -117,7 +117,7 @@ sample output:
 ```
 
 
-Operation : Add Multiple Scores
+#### Operation : Add Multiple Scores
 
 add a single score
 
@@ -155,7 +155,7 @@ sample output:
 ```
 
 
-Operation : List Scores
+#### Operation : List Scores
 
 shows all scores
 
